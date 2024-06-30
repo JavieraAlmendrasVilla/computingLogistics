@@ -89,6 +89,8 @@ def simulatedAnnealing(instance):
     print("Best distance:", best_distance)
     print("Best routes:", best_routes)
 
+    return best_distance, best_routes
+
 
 def swap_customers_within_route(route, customer_1,customer_2, demand, capacity, ready_time, due_time, service_time, distance_matrix):
     new_route = route.copy()
