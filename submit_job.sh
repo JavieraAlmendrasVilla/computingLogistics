@@ -21,7 +21,7 @@ conda init bash > /dev/null 2>&1
 # shellcheck disable=SC1090
 source ~/.bashrc > /dev/null 2>&1
 
-#conda activate p39 > /dev/null 2>&1
+conda activate cl > /dev/null 2>&1
 
 
 # Print out the host ID
@@ -39,7 +39,7 @@ while IFS=',' read -r run_name arg1 arg2; do
     srun --job-name=$run_name \
          --output=logs/$run_name/output-%j.log \
          --error=error-logs/$run_name/error-%j.log \
-         python offline.py "$arg1" "$arg2" "$run_name" &
+         python run.py "$arg1" "$arg2" "$run_name" &
 
 
     # Capture the PID of the srun command
